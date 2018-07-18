@@ -1,6 +1,7 @@
 FROM yunbaoguan/golang-mingw64:latest
 
 RUN wget https://download.libsodium.org/libsodium/releases/libsodium-1.0.16.tar.gz
+RUN tar zxf libsodium-1.0.16.tar.gz
 RUN cd libsodium-1.0.16
 RUN ./configure --host=x86_64-w64-mingw32 --enable-static --prefix=/mingw64
 RUN make && make install
